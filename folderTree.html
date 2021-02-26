@@ -1,0 +1,24 @@
+<ul class="folder-ui" ng-show="!vm.isCollapse">
+    <li ng-repeat="node in vm.treeData">
+        <span
+            class="current-folder cursor-pointer"
+            layout="row"
+        >
+            <span ng-click="vm.onNodeExpanded(node, $event)">
+                <md-icon
+                    class="{{ vm.getNodeIcon(node) }}"
+                ></md-icon>
+            </span>
+            <p
+                class="current-folder-name"
+                ng-click="vm.warpCallback('itemClicked', node, $event)"
+            >{{ node.name }}</p>
+        </span>
+        <folder-tree-module
+            tree-data="node.children"
+            is-collapse="node.isExpand"
+            item-clicked="vm.itemClicked({$item: $item, $event: $event})"
+            ng-if="node.children"
+        ></folder-tree-module>
+    </li>
+</ul>
