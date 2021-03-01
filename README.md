@@ -1,0 +1,2 @@
+# Angularjs-folderTreeModule
+基于Angularjs框架开发的自定义指令 folderTreeModule 用于展示树形结构数据，具有可选择以及伸缩功能。
